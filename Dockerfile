@@ -33,10 +33,6 @@ COPY . .
 RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' \
     /etc/apache2/sites-available/000-default.conf
 
-# Autoriser .htaccess
-RUN sed -i '/<Directory \\/var\\/www\\/>/,/<\\/Directory>/ s/AllowOverride None/AllowOverride All/' \
-    /etc/apache2/apache2.conf
-
 # Installer Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
@@ -45,13 +41,15 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 # Installer les dépendances Laravel
 RUN composer install --no-dev --optimize-autoloader
 
-# Générer le cache Laravel
+# Nettoyer le cache de configuration Laravel
 RUN php artisan config:clear
 
 # Permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Port utilisé par Render
 EXPOSE 80
 
+# Lancer Apache
 CMD ["apache2-foreground"]
