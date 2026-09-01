@@ -117,7 +117,19 @@
     .required-note {
         color: #777;
         font-size: 13px;
-    }
+    }.btn-reset {
+    background: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-reset:hover {
+    background: #ddd;
+}
 </style>
 
 
@@ -340,7 +352,13 @@
     <button type="submit">
         Envoyer
     </button>
+<button type="reset" class="btn-reset">
+    Effacer le formulaire
+</button>
 
+<button type="submit" class="btn-submit">
+    Envoyer
+</button>
 </form>
 
 </div>
