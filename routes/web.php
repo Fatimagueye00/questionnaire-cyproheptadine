@@ -1,4 +1,3 @@
-```php
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -10,3 +9,6 @@ Route::get('/', function () {
 
 Route::get('/questionnaire', [QuestionnaireController::class, 'index'])
     ->name('questionnaire');
+
+Route::post('/questionnaire', [QuestionnaireController::class, 'submit'])
+    ->name('questionnaire.submit');

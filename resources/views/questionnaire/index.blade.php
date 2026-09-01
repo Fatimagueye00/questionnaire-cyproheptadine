@@ -119,7 +119,7 @@
         font-size: 13px;
     }
 </style>
-```
+
 
 </head>
 
@@ -149,7 +149,8 @@
 
 </div>
 
-<form method="POST" action="#">
+<form method="POST" action="{{ route('questionnaire.submit') }}">
+
 
     @csrf
 
