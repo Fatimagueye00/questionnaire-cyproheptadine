@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "question": "Fonction du r\u00e9pondant",
+        "type": "single_choice",
+        "order": 1,
+        "active": 1,
+        "created_at": "2026-08-30 21:50:05",
+        "updated_at": "2026-09-01 16:03:24"
+    },
+    {
+        "id": 2,
+        "question": "Localisation de l'officine",
+        "type": "single_choice",
+        "order": 2,
+        "active": 1,
+        "created_at": "2026-08-30 21:59:35",
+        "updated_at": "2026-09-01 16:03:24"
+    },
+    {
+        "id": 3,
+        "question": "Votre officine d\u00e9livre-t-elle des m\u00e9dicaments contenant de la cyproheptadine ?",
+        "type": "single_choice",
+        "order": 3,
+        "active": 1,
+        "created_at": "2026-08-30 22:02:42",
+        "updated_at": "2026-09-01 16:03:24"
+    },
+    {
+        "id": 4,
+        "question": "Quelles sp\u00e9cialit\u00e9s contenant de la cyproheptadine sont demand\u00e9es dans votre officine ? Plusieurs r\u00e9ponses possibles.",
+        "type": "multiple_choice",
+        "order": 4,
+        "active": 1,
+        "created_at": "2026-08-30 22:10:09",
+        "updated_at": "2026-09-01 16:03:24"
+    },
+    {
+        "id": 5,
+        "question": "\u00c0 quelle fr\u00e9quence recevez-vous des demandes de m\u00e9dicaments contenant de la cyproheptadine ?",
+        "type": "single_choice",
+        "order": 5,
+        "active": 1,
+        "created_at": "2026-08-30 22:12:27",
+        "updated_at": "2026-09-01 16:03:24"
+    },
+    {
+        "id": 6,
+        "question": "Selon votre exp\u00e9rience, quelle part des demandes de cyproheptadine concerne une utilisation \u00e0 vis\u00e9e orexig\u00e8ne (stimulation de l'app\u00e9tit ou prise de poids) ?",
+        "type": "single_choice",
+        "order": 6,
+        "active": 1,
+        "created_at": "2026-08-30 22:21:22",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 7,
+        "question": "Quelle tranche d'\u00e2ge vous semble la plus repr\u00e9sent\u00e9e parmi les personnes demandant la cyproheptadine \u00e0 vis\u00e9e orexig\u00e8ne ?",
+        "type": "single_choice",
+        "order": 7,
+        "active": 1,
+        "created_at": "2026-08-30 22:41:07",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 8,
+        "question": "Quel sexe est majoritairement repr\u00e9sent\u00e9 ?",
+        "type": "single_choice",
+        "order": 8,
+        "active": 1,
+        "created_at": "2026-08-30 22:42:17",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 9,
+        "question": "Quels sont les principaux motifs \u00e9voqu\u00e9s par ces personnes ? Plusieurs r\u00e9ponses possibles.",
+        "type": "multiple_choice",
+        "order": 9,
+        "active": 1,
+        "created_at": "2026-08-30 22:43:04",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 10,
+        "question": "Selon vous, quelle est la principale source d'influence dans ces demandes ?",
+        "type": "single_choice",
+        "order": 10,
+        "active": 1,
+        "created_at": "2026-08-30 22:44:00",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 11,
+        "question": "Les demandes de cyproheptadine \u00e0 vis\u00e9e orexig\u00e8ne sont-elles g\u00e9n\u00e9ralement accompagn\u00e9es d'une prescription m\u00e9dicale ?",
+        "type": "single_choice",
+        "order": 11,
+        "active": 1,
+        "created_at": "2026-08-30 22:46:03",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 12,
+        "question": "Avez-vous d\u00e9j\u00e0 re\u00e7u une demande de cyproheptadine \u00e0 vis\u00e9e orexig\u00e8ne avec une posologie ou une dur\u00e9e d'utilisation que vous jugiez inappropri\u00e9e ?",
+        "type": "single_choice",
+        "order": 12,
+        "active": 1,
+        "created_at": "2026-08-30 22:50:33",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 13,
+        "question": "Lorsque vous identifiez une demande \u00e0 vis\u00e9e orexig\u00e8ne, quelle(s) attitude(s) adoptez-vous g\u00e9n\u00e9ralement ? Plusieurs r\u00e9ponses possibles.",
+        "type": "multiple_choice",
+        "order": 13,
+        "active": 1,
+        "created_at": "2026-08-31 12:36:11",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 14,
+        "question": "Avez-vous d\u00e9j\u00e0 refus\u00e9 de d\u00e9livrer de la cyproheptadine en raison d'un usage que vous estimiez inappropri\u00e9 ?",
+        "type": "single_choice",
+        "order": 14,
+        "active": 1,
+        "created_at": "2026-08-31 12:42:57",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 16,
+        "question": "Avez-vous connaissance de la promotion de la cyproheptadine \u00e0 des fins de prise de poids sur les r\u00e9seaux sociaux ?",
+        "type": "single_choice",
+        "order": 15,
+        "active": 1,
+        "created_at": "2026-08-31 12:45:46",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 17,
+        "question": "Avez-vous d\u00e9j\u00e0 rencontr\u00e9 un patient demandant un produit apr\u00e8s l'avoir vu ou recommand\u00e9 sur les r\u00e9seaux sociaux ?",
+        "type": "single_choice",
+        "order": 16,
+        "active": 1,
+        "created_at": "2026-08-31 12:46:46",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 18,
+        "question": "Avez-vous connaissance de produits pr\u00e9sent\u00e9s comme  orexig\u00e8nes  ou  favorisant la prise de poids , susceptibles de contenir de la cyproheptadine et vendus en dehors du circuit pharmaceutique ?",
+        "type": "single_choice",
+        "order": 17,
+        "active": 1,
+        "created_at": "2026-08-31 12:47:29",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 19,
+        "question": "Consid\u00e9rez-vous que le m\u00e9susage de la cyproheptadine \u00e0 des fins orexig\u00e8nes constitue un probl\u00e8me dans votre pratique officinale ?",
+        "type": "single_choice",
+        "order": 18,
+        "active": 1,
+        "created_at": "2026-08-31 12:57:35",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 20,
+        "question": "Selon vous, quels sont les principaux facteurs favorisant ce m\u00e9susage ? Plusieurs r\u00e9ponses possibles.",
+        "type": "multiple_choice",
+        "order": 19,
+        "active": 1,
+        "created_at": "2026-08-31 13:00:02",
+        "updated_at": "2026-09-01 16:03:25"
+    },
+    {
+        "id": 21,
+        "question": "Quelles mesures permettraient, selon vous, de r\u00e9duire le m\u00e9susage de la cyproheptadine \u00e0 des fins orexig\u00e8nes ? Plusieurs r\u00e9ponses possibles.",
+        "type": "multiple_choice",
+        "order": 20,
+        "active": 1,
+        "created_at": "2026-08-31 13:18:37",
+        "updated_at": "2026-09-01 16:03:25"
+    }
+]
