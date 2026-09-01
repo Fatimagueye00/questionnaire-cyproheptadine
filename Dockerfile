@@ -1,29 +1,56 @@
 FROM php:8.2-apache
 
-RUN docker-php-ext-install pdo pdo_mysql
+# Installer les dépendances système nécessaires
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    zip \
+    libzip-dev \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    libcurl4-openssl-dev \
+    && docker-php-ext-install \
+    pdo_mysql \
+    mbstring \
+    exif \
+    pcntl \
+    bcmath \
+    gd \
+    zip \
+    && a2enmod rewrite \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN a2enmod rewrite
-
+# Dossier de travail
 WORKDIR /var/www/html
 
+# Copier le projet
 COPY . .
 
-RUN cp .env.example .env
+# Configuration Apache pour Laravel
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' \
+    /etc/apache2/sites-available/000-default.conf
 
-RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' /etc/apache2/sites-available/000-default.conf
+RUN sed -i 's|<Directory /var/www/>|<Directory /var/www/>|' \
+    /etc/apache2/apache2.conf
 
-RUN sed -i 's|<Directory /var/www/html>|<Directory /var/www/html/public>|' /etc/apache2/apache2.conf
+# Installer Composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
+    && rm composer-setup.php
 
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-RUN rm composer-setup.php
-
+# Installer les dépendances Laravel
 RUN composer install --no-dev --optimize-autoloader
 
-RUN php artisan key:generate
+# Générer le cache Laravel
+RUN php artisan config:clear
 
-RUN chown -R www-data:www-data storage bootstrap/cache
+# Permissions
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
+    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Port utilisé par Render
 EXPOSE 80
 
+# Lancer Apache
 CMD ["apache2-foreground"]
