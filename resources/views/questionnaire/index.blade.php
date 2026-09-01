@@ -1,557 +1,477 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Questionnaire de pré-test</title>
+    <title>Questionnaire de pré-test</title>
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        background: #f5f7fa;
-        margin: 0;
-        padding: 40px 20px;
-        color: #333;
-    }
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background: #f4f7f6;
+            color: #222;
+        }
 
-    .container {
-        max-width: 850px;
-        margin: auto;
-        background: white;
-        padding: 35px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    }
+        .container {
+            max-width: 950px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
 
-    h1 {
-        color: #1f2937;
-        margin-bottom: 15px;
-    }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    .intro {
-        color: #555;
-        line-height: 1.6;
-        margin-bottom: 30px;
-    }
+        .header h1 {
+            margin-bottom: 12px;
+            color: #176b4d;
+            font-size: 30px;
+        }
 
-    .question {
-        margin-bottom: 30px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #eee;
-    }
+        .subtitle {
+            font-size: 17px;
+            line-height: 1.6;
+            font-weight: 600;
+        }
 
-    .question-title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        line-height: 1.5;
-    }
+        .intro {
+            margin-top: 20px;
+            line-height: 1.7;
+            color: #555;
+        }
 
-    .answer {
-        margin: 12px 0;
-    }
+        .participant-header {
+            display: none;
+            margin: 20px 0;
+            padding: 15px;
+            background: #eef8f3;
+            border-left: 5px solid #176b4d;
+            border-radius: 8px;
+        }
 
-    label {
-        cursor: pointer;
-        line-height: 1.6;
-    }
+        .participant-header strong {
+            color: #176b4d;
+        }
 
-    input[type="radio"],
-    input[type="checkbox"] {
-        margin-right: 8px;
-        transform: scale(1.1);
-    }
+        .participant-info {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8faf9;
+            border-radius: 12px;
+        }
 
-    .other-input {
-        display: none;
-        margin-top: 10px;
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        font-size: 15px;
-    }
+        .participant-info h2 {
+            color: #176b4d;
+            margin-top: 0;
+        }
 
-    button {
-        background: #2563eb;
-        color: white;
-        border: none;
-        padding: 13px 28px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 16px;
-    }
+        .field {
+            margin-bottom: 18px;
+        }
 
-    button:hover {
-        background: #1d4ed8;
-    }
+        .field label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
 
-    .multiple-info {
-        font-size: 14px;
-        color: #666;
-        font-weight: normal;
-    }
+        .field input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
 
-    /* Sous-question de la question 14 */
-    .sub-question {
-        display: none;
-        margin-top: 20px;
-        margin-left: 20px;
-        padding: 20px;
-        background: #f8fafc;
-        border-left: 4px solid #2563eb;
-        border-radius: 8px;
-    }
+        .question {
+            margin: 25px 0;
+            padding: 22px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background: #fff;
+        }
 
-    .sub-question .question-title {
-        font-size: 16px;
-    }
+        .question-title {
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
 
-    .required-note {
-        color: #777;
-        font-size: 13px;
-    }.btn-reset {
-    background: #f1f1f1;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 10px;
-}
+        .answer {
+            margin: 10px 0;
+        }
 
-.btn-reset:hover {
-    background: #ddd;
-}
-</style>
+        .answer label {
+            cursor: pointer;
+        }
 
+        .other-input {
+            display: none;
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+        }
 
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            border: none;
+            padding: 13px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background: #176b4d;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background: #12543c;
+        }
+
+        .btn-reset {
+            background: #e5e5e5;
+            color: #333;
+        }
+
+        .btn-reset:hover {
+            background: #d2d2d2;
+        }
+
+        .success {
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #dff5e9;
+            color: #176b4d;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="container">
 
+    <div class="header">
 
-<h1>QUESTIONNAIRE DE PRÉ-TEST</h1>
+        <h1>QUESTIONNAIRE DE PRÉ-TEST</h1>
 
-<div class="intro">
+        <div class="subtitle">
+            Pré-test du questionnaire d’enquête sur le mésusage de la cyproheptadine
+            à des fins orexigènes auprès des pharmaciens d’officine
+        </div>
 
-    <p>
-        Enquête auprès des pharmaciens d'officine afin d'évaluer
-        les caractéristiques des demandes, le profil des consommateurs
-        et les pratiques professionnelles face à ce phénomène.
-    </p>
+        <div class="intro">
+            <p>
+                Dans le cadre d’une étude portant sur le mésusage de la cyproheptadine
+                à des fins orexigènes, nous réalisons une enquête auprès des pharmaciens
+                d’officine afin d’évaluer les caractéristiques des demandes, le profil
+                des consommateurs ainsi que les pratiques et le niveau de vigilance
+                des professionnels face à ce phénomène.
+            </p>
 
-    <p>
-        Les informations recueillies sont anonymes et confidentielles
-        et seront utilisées exclusivement à des fins scientifiques.
-    </p>
+            <p>
+                Les informations recueillies sont anonymes et confidentielles et seront
+                utilisées exclusivement à des fins scientifiques.
+            </p>
 
-    <p>
-        Nous vous remercions pour votre participation.
-    </p>
+            <p>
+                Nous vous remercions pour votre participation.
+            </p>
+        </div>
 
-</div>
-
-<form method="POST" action="{{ route('questionnaire.submit') }}">
+    </div>
 
 
-    @csrf
+    {{-- Informations visibles dans l'entête --}}
+    <div id="participantHeader" class="participant-header">
 
-    @foreach ($questions as $question)
+        <strong>Participant :</strong>
 
-        <div class="question">
+        <span id="headerNom"></span>
+        <span id="headerPrenom"></span>
 
-            {{-- NUMÉRO ET TEXTE DE LA QUESTION --}}
-            <div class="question-title">
+        <span id="headerAge"></span>
+        <span id="headerFonction"></span>
 
-                {{ $loop->iteration }}.
-                {{ $question->question }}
+    </div>
 
-                @if ($question->type === 'multiple_choice')
-                    <span class="multiple-info">
-                        (Plusieurs réponses possibles)
-                    </span>
-                @endif
 
+    @if(session('success'))
+        <div class="success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+
+    <form method="POST" action="{{ route('questionnaire.submit') }}">
+
+        @csrf
+
+
+        {{-- Informations du participant --}}
+        <div class="participant-info">
+
+            <h2>Informations du participant</h2>
+
+            <div class="field">
+                <label for="nom">Nom</label>
+                <input
+                    type="text"
+                    id="nom"
+                    name="nom"
+                    required
+                >
             </div>
 
+            <div class="field">
+                <label for="prenom">Prénom</label>
+                <input
+                    type="text"
+                    id="prenom"
+                    name="prenom"
+                    required
+                >
+            </div>
 
-            {{-- RÉPONSES DE LA QUESTION --}}
-            @foreach ($question->answers->where('active', true) as $answer)
+            <div class="field">
+                <label for="age">Âge</label>
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    min="1"
+                    max="120"
+                    required
+                >
+            </div>
 
-                <div class="answer">
+            <div class="field">
+                <label for="fonction">Fonction</label>
+                <input
+                    type="text"
+                    id="fonction"
+                    name="fonction"
+                    required
+                >
+            </div>
 
-                    <label>
-
-                        @if ($question->type === 'multiple_choice')
-
-                            <input
-                                type="checkbox"
-                                name="question_{{ $question->id }}[]"
-                                value="{{ $answer->id }}"
-                                data-question-id="{{ $question->id }}"
-                                data-allows-other="{{ $answer->allows_other ? '1' : '0' }}"
-                                onchange="toggleOther(this)"
-                            >
-
-                        @else
-
-                            <input
-                                type="radio"
-                                name="question_{{ $question->id }}"
-                                value="{{ $answer->id }}"
-                                data-question-id="{{ $question->id }}"
-                                data-allows-other="{{ $answer->allows_other ? '1' : '0' }}"
-                                onchange="toggleOther(this); toggleQuestion14(this)"
-                            >
-
-                        @endif
-
-                        {{ $answer->answer }}
-
-                    </label>
+        </div>
 
 
-                    {{-- CHAMP "AUTRE" --}}
-                    @if ($answer->allows_other)
+        {{-- Questions --}}
+        @foreach ($questions as $question)
 
-                        <input
-                            type="text"
-                            name="other_{{ $question->id }}"
-                            id="other_{{ $answer->id }}"
-                            class="other-input"
-                            placeholder="Veuillez préciser..."
-                        >
+            <div class="question">
 
+                <div class="question-title">
+
+                    {{ $question->order }}.
+                    {{ $question->text }}
+
+                    @if($question->multiple)
+                        <small>
+                            (Plusieurs réponses possibles)
+                        </small>
                     @endif
 
                 </div>
 
-            @endforeach
 
-
-            {{-- ================================================= --}}
-            {{-- SOUS-QUESTION DE LA QUESTION 14 UNIQUEMENT --}}
-            {{-- ================================================= --}}
-
-            @if ($question->order == 14)
-
-                <div id="sous-question-14" class="sub-question">
-
-                    <div class="question-title">
-
-                        Si oui, pour quelle(s) raison(s) ?
-
-                        <span class="multiple-info">
-                            (Plusieurs réponses possibles)
-                        </span>
-
-                    </div>
-
-
-                    <div class="answer">
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="question_14_raisons[]"
-                                value="absence_prescription"
-                            >
-                            Absence de prescription
-                        </label>
-                    </div>
-
-
-                    <div class="answer">
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="question_14_raisons[]"
-                                value="utilisation_esthetique"
-                            >
-                            Utilisation à visée esthétique
-                        </label>
-                    </div>
-
-
-                    <div class="answer">
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="question_14_raisons[]"
-                                value="posologie_inappropriee"
-                            >
-                            Posologie inappropriée
-                        </label>
-                    </div>
-
-
-                    <div class="answer">
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="question_14_raisons[]"
-                                value="utilisation_prolongee"
-                            >
-                            Utilisation prolongée
-                        </label>
-                    </div>
-
-
-                    <div class="answer">
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="question_14_raisons[]"
-                                value="demande_excessive"
-                            >
-                            Demande excessive/répétée
-                        </label>
-                    </div>
-
+                @foreach ($question->answers as $answer)
 
                     <div class="answer">
 
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="question_14_raisons[]"
-                                value="autre"
-                                onchange="toggleAutre14(this)"
-                            >
-                            Autre
-                        </label>
+                        @if($question->multiple)
 
-                        <input
-                            type="text"
-                            name="question_14_autre"
-                            id="question_14_autre"
-                            class="other-input"
-                            placeholder="Veuillez préciser..."
-                        >
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="question_{{ $question->id }}[]"
+                                    value="{{ $answer->id }}"
+                                    onchange="toggleOther(this)"
+                                >
+
+                                {{ $answer->text }}
+                            </label>
+
+                        @else
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="question_{{ $question->id }}"
+                                    value="{{ $answer->id }}"
+                                    onchange="toggleOther(this)"
+                                    required
+                                >
+
+                                {{ $answer->text }}
+                            </label>
+
+                        @endif
+
+
+                        @if(strtolower(trim($answer->text)) === 'autre')
+
+                            <input
+                                type="text"
+                                name="other_{{ $question->id }}"
+                                class="other-input"
+                                placeholder="Précisez..."
+                            >
+
+                        @endif
 
                     </div>
 
-                </div>
+                @endforeach
 
-            @endif
+            </div>
+
+        @endforeach
+
+
+        {{-- UN SEUL bouton Envoyer --}}
+        <div class="buttons">
+
+            <button type="submit" class="btn btn-submit">
+                Envoyer
+            </button>
+
+            <button type="reset" class="btn btn-reset">
+                Effacer le formulaire
+            </button>
 
         </div>
 
-    @endforeach
-
-
-    <button type="submit">
-        Envoyer
-    </button>
-<button type="reset" class="btn-reset">
-    Effacer le formulaire
-</button>
-
-<button type="submit" class="btn-submit">
-    Envoyer
-</button>
-</form>
+    </form>
 
 </div>
 
+
 <script>
 
-/*
-|--------------------------------------------------------------------------
-| CHAMP "AUTRE"
-|--------------------------------------------------------------------------
-*/
-
-function toggleOther(input) {
-
-    const questionId = input.dataset.questionId;
-
-    const otherInputs = document.querySelectorAll(
-        '[name="other_' + questionId + '"]'
-    );
-
     /*
-    | Pour les boutons radio :
-    | on cache tous les champs "Autre" avant d'afficher
-    | celui correspondant à la réponse sélectionnée.
-    */
+     * Affichage automatique des informations
+     * du participant dans l'entête.
+     */
 
-    if (input.type === 'radio') {
+    const nomInput = document.getElementById('nom');
+    const prenomInput = document.getElementById('prenom');
+    const ageInput = document.getElementById('age');
+    const fonctionInput = document.getElementById('fonction');
 
-        otherInputs.forEach(function(otherInput) {
+    const participantHeader =
+        document.getElementById('participantHeader');
 
-            otherInput.style.display = 'none';
-            otherInput.value = '';
+    const headerNom =
+        document.getElementById('headerNom');
 
-        });
+    const headerPrenom =
+        document.getElementById('headerPrenom');
 
+    const headerAge =
+        document.getElementById('headerAge');
+
+    const headerFonction =
+        document.getElementById('headerFonction');
+
+
+    function updateParticipantHeader() {
+
+        headerNom.textContent =
+            nomInput.value ? nomInput.value + ' ' : '';
+
+        headerPrenom.textContent =
+            prenomInput.value ? prenomInput.value + ' ' : '';
+
+        headerAge.textContent =
+            ageInput.value ? '(' + ageInput.value + ' ans) ' : '';
+
+        headerFonction.textContent =
+            fonctionInput.value
+                ? '- ' + fonctionInput.value
+                : '';
+
+        participantHeader.style.display =
+            (
+                nomInput.value ||
+                prenomInput.value ||
+                ageInput.value ||
+                fonctionInput.value
+            )
+            ? 'block'
+            : 'none';
     }
 
 
-    const otherInput = document.getElementById(
-        'other_' + input.value
+    nomInput.addEventListener(
+        'input',
+        updateParticipantHeader
     );
 
+    prenomInput.addEventListener(
+        'input',
+        updateParticipantHeader
+    );
 
-    if (!otherInput) {
-        return;
-    }
+    ageInput.addEventListener(
+        'input',
+        updateParticipantHeader
+    );
 
-
-    if (
-        input.checked &&
-        input.dataset.allowsOther === '1'
-    ) {
-
-        otherInput.style.display = 'block';
-
-        otherInput.focus();
-
-    } else {
-
-        otherInput.style.display = 'none';
-
-        otherInput.value = '';
-
-    }
-
-}
-
-
-/*
-|--------------------------------------------------------------------------
-| SOUS-QUESTION DE LA QUESTION 14
-|--------------------------------------------------------------------------
-|
-| La sous-question apparaît uniquement lorsque la réponse
-| "Oui" de la question 14 est sélectionnée.
-|
-*/
-
-function toggleQuestion14(input) {
-
-    const sousQuestion = document.getElementById(
-        'sous-question-14'
+    fonctionInput.addEventListener(
+        'input',
+        updateParticipantHeader
     );
 
 
-    if (!sousQuestion) {
-        return;
-    }
-
-
     /*
-    | On vérifie que nous sommes bien sur la question 14.
-    */
+     * Afficher le champ "Autre"
+     * uniquement lorsqu'il est sélectionné.
+     */
 
-    if (input.dataset.questionId != "{{ $questions->firstWhere('order', 14)->id ?? '' }}") {
-        return;
-    }
+    function toggleOther(element) {
 
+        const parent =
+            element.closest('.answer');
 
-    /*
-    | Récupération du texte de la réponse.
-    */
+        const otherInput =
+            parent.querySelector('.other-input');
 
-    const labelText = input.parentElement.textContent
-        .trim()
-        .toLowerCase();
-
-
-    /*
-    | Si la réponse contient "oui", on affiche
-    | la sous-question.
-    */
-
-    if (
-        input.checked &&
-        labelText.includes('oui')
-    ) {
-
-        sousQuestion.style.display = 'block';
-
-    } else {
-
-        sousQuestion.style.display = 'none';
-
-
-        /*
-        | On décoche les raisons.
-        */
-
-        sousQuestion
-            .querySelectorAll('input[type="checkbox"]')
-            .forEach(function(checkbox) {
-
-                checkbox.checked = false;
-
-            });
-
-
-        /*
-        | On vide le champ Autre.
-        */
-
-        const autre = document.getElementById(
-            'question_14_autre'
-        );
-
-
-        if (autre) {
-
-            autre.style.display = 'none';
-
-            autre.value = '';
-
+        if (!otherInput) {
+            return;
         }
 
-    }
-
-}
-
-
-/*
-|--------------------------------------------------------------------------
-| AUTRE DE LA SOUS-QUESTION 14
-|--------------------------------------------------------------------------
-*/
-
-function toggleAutre14(input) {
-
-    const autre = document.getElementById(
-        'question_14_autre'
-    );
-
-
-    if (!autre) {
-        return;
-    }
-
-
-    if (input.checked) {
-
-        autre.style.display = 'block';
-
-        autre.focus();
-
-    } else {
-
-        autre.style.display = 'none';
-
-        autre.value = '';
+        otherInput.style.display =
+            element.checked
+                ? 'block'
+                : 'none';
 
     }
-
-}
 
 </script>
 
