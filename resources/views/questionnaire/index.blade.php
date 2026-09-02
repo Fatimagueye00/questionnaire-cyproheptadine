@@ -429,7 +429,7 @@
             <button
                 type="button"
                 class="reset-btn"
-                onclick="effacerFormulaire()"
+                onclick="confirmerEffacement()"
             >
                 Effacer le formulaire
             </button>
@@ -443,152 +443,93 @@
 
 <script>
 
-    /*
-    |--------------------------------------------------------------------------
-    | Afficher / cacher le champ "Autre"
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Afficher / cacher le champ "Autre"
+|--------------------------------------------------------------------------
+*/
 
-    function toggleOther(element) {
+function toggleOther(element) {
 
-        const answerContainer = element.closest('.answer');
+    const answerContainer = element.closest('.answer');
 
-        if (!answerContainer) {
-            return;
-        }
-
-        const otherInput =
-            answerContainer.querySelector('.other-input');
-
-        if (!otherInput) {
-            return;
-        }
-
-        if (element.checked) {
-
-            otherInput.style.display = 'block';
-
-        } else {
-
-            otherInput.style.display = 'none';
-            otherInput.value = '';
-
-        }
+    if (!answerContainer) {
+        return;
     }
 
+    const otherInput =
+        answerContainer.querySelector('.other-input');
 
-    /*
-    |--------------------------------------------------------------------------
-    | Question 14
-    |--------------------------------------------------------------------------
-    */
-
-    function toggleQuestion14(element) {
-
-        const questionId =
-            element.dataset.questionId;
-
-        const questionNumber =
-            "{{ $questions->firstWhere('order', 14)->id ?? '' }}";
-
-        const sousQuestion =
-            document.getElementById('sous-question-14');
-
-        if (!sousQuestion) {
-            return;
-        }
-
-        if (questionId != questionNumber) {
-            return;
-        }
-
-        const label =
-            element.closest('label');
-
-        if (!label) {
-            return;
-        }
-
-        const texte =
-            label.innerText.toLowerCase();
-
-        if (texte.includes('oui')) {
-
-            sousQuestion.style.display = 'block';
-
-        } else {
-
-            sousQuestion.style.display = 'none';
-
-            sousQuestion
-                .querySelectorAll('input[type="checkbox"]')
-                .forEach(function(input) {
-
-                    input.checked = false;
-
-                });
-
-            sousQuestion
-                .querySelectorAll('input[type="text"]')
-                .forEach(function(input) {
-
-                    input.value = '';
-                    input.style.display = 'none';
-
-                });
-
-        }
+    if (!otherInput) {
+        return;
     }
 
+    if (element.checked) {
 
-    /*
-    |--------------------------------------------------------------------------
-    | "Autre" de la sous-question 14
-    |--------------------------------------------------------------------------
-    */
+        otherInput.style.display = 'block';
 
-    function toggleSousQuestionAutre(element) {
+    } else {
 
-        const autreInput =
-            document.getElementById('question_14_autre');
+        otherInput.style.display = 'none';
+        otherInput.value = '';
 
-        if (!autreInput) {
-            return;
-        }
+    }
+}
 
-        if (element.checked) {
 
-            autreInput.style.display = 'block';
+/*
+|--------------------------------------------------------------------------
+| Question 14
+|--------------------------------------------------------------------------
+*/
 
-        } else {
+function toggleQuestion14(element) {
 
-            autreInput.style.display = 'none';
-            autreInput.value = '';
+    const questionId =
+        element.dataset.questionId;
 
-        }
+    const questionNumber =
+        "{{ $questions->firstWhere('order', 14)->id ?? '' }}";
+
+    const sousQuestion =
+        document.getElementById('sous-question-14');
+
+    if (!sousQuestion) {
+        return;
     }
 
+    if (questionId != questionNumber) {
+        return;
+    }
 
-    /*
-    |--------------------------------------------------------------------------
-    | Effacer complètement le formulaire
-    |--------------------------------------------------------------------------
-    */
+    const label =
+        element.closest('label');
 
-    function effacerFormulaire() {
+    if (!label) {
+        return;
+    }
 
-        const formulaire =
-            document.querySelector('form');
+    const texte =
+        label.innerText.toLowerCase();
 
-        if (!formulaire) {
-            return;
-        }
+    if (texte.includes('oui')) {
 
-        formulaire.reset();
+        sousQuestion.style.display = 'block';
 
+    } else {
 
-        document
-            .querySelectorAll('.other-input')
+        sousQuestion.style.display = 'none';
+
+        sousQuestion
+            .querySelectorAll('input[type="checkbox"]')
+            .forEach(function(input) {
+
+                input.checked = false;
+
+            });
+
+        sousQuestion
+            .querySelectorAll('input[type="text"]')
             .forEach(function(input) {
 
                 input.value = '';
@@ -596,17 +537,84 @@
 
             });
 
+    }
+}
 
-        const sousQuestion =
-            document.getElementById('sous-question-14');
 
-        if (sousQuestion) {
+/*
+|--------------------------------------------------------------------------
+| "Autre" de la sous-question 14
+|--------------------------------------------------------------------------
+*/
 
-            sousQuestion.style.display = 'none';
+function toggleSousQuestionAutre(element) {
 
-        }
+    const autreInput =
+        document.getElementById('question_14_autre');
+
+    if (!autreInput) {
+        return;
+    }
+
+    if (element.checked) {
+
+        autreInput.style.display = 'block';
+
+    } else {
+
+        autreInput.style.display = 'none';
+        autreInput.value = '';
 
     }
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Confirmation avant effacement
+|--------------------------------------------------------------------------
+*/
+
+function confirmerEffacement() {
+
+    const confirmation = confirm(
+        "Êtes-vous sûr de vouloir effacer ce formulaire ?"
+    );
+
+    if (!confirmation) {
+        return;
+    }
+
+    const formulaire =
+        document.querySelector('form');
+
+    if (!formulaire) {
+        return;
+    }
+
+    formulaire.reset();
+
+
+    document
+        .querySelectorAll('.other-input')
+        .forEach(function(input) {
+
+            input.value = '';
+            input.style.display = 'none';
+
+        });
+
+
+    const sousQuestion =
+        document.getElementById('sous-question-14');
+
+    if (sousQuestion) {
+
+        sousQuestion.style.display = 'none';
+
+    }
+
+}
 
 </script>
 
