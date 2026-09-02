@@ -11,15 +11,19 @@ class QuestionnaireController extends Controller
             ->where('active', true)
             ->orderBy('order', 'asc')
             ->get();
+        foreach ($questions as $question) {
+            $question->setRelation(
+                'answers',
+                $question->answers->unique('id')->values()
+            );
+        }
         return view('questionnaire.index', compact('questions'));
     }
     public function submit(Request $request)
     {
-        // Récupérer uniquement les réponses du questionnaire
         $reponses = $request->except([
             '_token',
         ]);
-        // Enregistrer les réponses
         QuestionnaireResponse::create([
             'reponses' => $reponses,
         ]);
