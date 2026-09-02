@@ -1,1102 +1,702 @@
 [
-    {
-        "id": 1,
-        "question_id": 1,
-        "answer": "Pharmacien titulaire",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 21:51:06",
-        "updated_at": "2026-08-30 21:51:06"
-    },
-    {
-        "id": 2,
-        "question_id": 1,
-        "answer": "Pharmacien assistant",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 21:51:06",
-        "updated_at": "2026-08-30 21:51:06"
-    },
-    {
-        "id": 3,
-        "question_id": 1,
-        "answer": "Autre",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 1,
-        "created_at": "2026-08-30 21:51:06",
-        "updated_at": "2026-08-30 21:51:06"
-    },
-    {
-        "id": 4,
-        "question_id": 2,
-        "answer": "Dakar",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:00:32",
-        "updated_at": "2026-08-30 22:00:32"
-    },
-    {
-        "id": 5,
-        "question_id": 2,
-        "answer": "Thiès",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:00:32",
-        "updated_at": "2026-08-30 22:00:32"
-    },
-    {
-        "id": 6,
-        "question_id": 2,
-        "answer": "Mbour",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:00:32",
-        "updated_at": "2026-08-30 22:00:32"
-    },
-    {
-        "id": 7,
-        "question_id": 2,
-        "answer": "Autre",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 1,
-        "created_at": "2026-08-30 22:00:32",
-        "updated_at": "2026-08-30 22:00:32"
-    },
-    {
-        "id": 8,
-        "question_id": 3,
-        "answer": "Oui",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:03:38",
-        "updated_at": "2026-08-30 22:03:38"
-    },
-    {
-        "id": 9,
-        "question_id": 3,
-        "answer": "Non",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:03:38",
-        "updated_at": "2026-08-30 22:03:38"
-    },
-    {
-        "id": 10,
-        "question_id": 4,
-        "answer": "Antinorex",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 11,
-        "question_id": 4,
-        "answer": "Pernabol",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 12,
-        "question_id": 4,
-        "answer": "Nurabol",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 13,
-        "question_id": 4,
-        "answer": "Ciptadine",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 14,
-        "question_id": 4,
-        "answer": "Appetine",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 15,
-        "question_id": 4,
-        "answer": "Pervital",
-        "score": 0,
-        "order": 6,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 16,
-        "question_id": 4,
-        "answer": "Nuravit",
-        "score": 0,
-        "order": 7,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 17,
-        "question_id": 4,
-        "answer": "Stimogene",
-        "score": 0,
-        "order": 8,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 18,
-        "question_id": 4,
-        "answer": "Trimetabol",
-        "score": 0,
-        "order": 9,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 19,
-        "question_id": 4,
-        "answer": "Tres-Orix",
-        "score": 0,
-        "order": 10,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 20,
-        "question_id": 4,
-        "answer": "Dynamogen",
-        "score": 0,
-        "order": 11,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 21,
-        "question_id": 4,
-        "answer": "Apetamin",
-        "score": 0,
-        "order": 12,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 22,
-        "question_id": 4,
-        "answer": "Desyrel",
-        "score": 0,
-        "order": 13,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 23,
-        "question_id": 4,
-        "answer": "Neuheptavit",
-        "score": 0,
-        "order": 14,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 24,
-        "question_id": 4,
-        "answer": "Autre",
-        "score": 0,
-        "order": 15,
-        "active": 1,
-        "allows_other": 1,
-        "created_at": "2026-08-30 22:11:32",
-        "updated_at": "2026-08-30 22:11:32"
-    },
-    {
-        "id": 25,
-        "question_id": 5,
-        "answer": "Très rarement",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:13:51",
-        "updated_at": "2026-08-30 22:13:51"
-    },
-    {
-        "id": 26,
-        "question_id": 5,
-        "answer": "Rarement",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:13:51",
-        "updated_at": "2026-08-30 22:13:51"
-    },
-    {
-        "id": 27,
-        "question_id": 5,
-        "answer": "Occasionnellement",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:13:51",
-        "updated_at": "2026-08-30 22:13:51"
-    },
-    {
-        "id": 28,
-        "question_id": 5,
-        "answer": "Fréquemment",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:13:51",
-        "updated_at": "2026-08-30 22:13:51"
-    },
-    {
-        "id": 29,
-        "question_id": 5,
-        "answer": "Très fréquemment",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:13:51",
-        "updated_at": "2026-08-30 22:13:51"
-    },
-    {
-        "id": 30,
-        "question_id": 6,
-        "answer": "Moins de 25 %",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:30:43",
-        "updated_at": "2026-08-30 22:30:43"
-    },
-    {
-        "id": 31,
-        "question_id": 6,
-        "answer": "25-50 %",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:30:43",
-        "updated_at": "2026-08-30 22:30:43"
-    },
-    {
-        "id": 32,
-        "question_id": 6,
-        "answer": "51-75 %",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:30:43",
-        "updated_at": "2026-08-30 22:30:43"
-    },
-    {
-        "id": 33,
-        "question_id": 6,
-        "answer": "Plus de 75 %",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:30:43",
-        "updated_at": "2026-08-30 22:30:43"
-    },
-    {
-        "id": 34,
-        "question_id": 6,
-        "answer": "Ne sait pas",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:30:43",
-        "updated_at": "2026-08-30 22:30:43"
-    },
-    {
-        "id": 35,
-        "question_id": 7,
-        "answer": "Moins de 18 ans",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:41:33",
-        "updated_at": "2026-08-30 22:41:33"
-    },
-    {
-        "id": 36,
-        "question_id": 7,
-        "answer": "18-25 ans",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:41:33",
-        "updated_at": "2026-08-30 22:41:33"
-    },
-    {
-        "id": 37,
-        "question_id": 7,
-        "answer": "26-35 ans",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:41:33",
-        "updated_at": "2026-08-30 22:41:33"
-    },
-    {
-        "id": 38,
-        "question_id": 7,
-        "answer": "36-45 ans",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:41:33",
-        "updated_at": "2026-08-30 22:41:33"
-    },
-    {
-        "id": 39,
-        "question_id": 7,
-        "answer": "Plus de 45 ans",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:41:33",
-        "updated_at": "2026-08-30 22:41:33"
-    },
-    {
-        "id": 40,
-        "question_id": 7,
-        "answer": "Ne sait pas",
-        "score": 0,
-        "order": 6,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:41:33",
-        "updated_at": "2026-08-30 22:41:33"
-    },
-    {
-        "id": 41,
-        "question_id": 8,
-        "answer": "Feminin",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:42:31",
-        "updated_at": "2026-08-30 22:42:31"
-    },
-    {
-        "id": 42,
-        "question_id": 8,
-        "answer": "Masculin",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:42:31",
-        "updated_at": "2026-08-30 22:42:31"
-    },
-    {
-        "id": 43,
-        "question_id": 8,
-        "answer": "Les deux de facon comparable",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:42:31",
-        "updated_at": "2026-08-30 22:42:31"
-    },
-    {
-        "id": 44,
-        "question_id": 8,
-        "answer": "Ne sait pas",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:42:31",
-        "updated_at": "2026-08-30 22:42:31"
-    },
-    {
-        "id": 45,
-        "question_id": 9,
-        "answer": "Manque d appetit",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:43:21",
-        "updated_at": "2026-08-30 22:43:21"
-    },
-    {
-        "id": 46,
-        "question_id": 9,
-        "answer": "Volonte de prendre du poids",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:43:21",
-        "updated_at": "2026-08-30 22:43:21"
-    },
-    {
-        "id": 47,
-        "question_id": 9,
-        "answer": "Recherche de rondeurs",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:43:21",
-        "updated_at": "2026-08-30 22:43:21"
-    },
-    {
-        "id": 48,
-        "question_id": 9,
-        "answer": "Modification de la silhouette",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:43:21",
-        "updated_at": "2026-08-30 22:43:21"
-    },
-    {
-        "id": 49,
-        "question_id": 9,
-        "answer": "Augmentation du volume des fesses\/hanches",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:43:21",
-        "updated_at": "2026-08-30 22:43:21"
-    },
-    {
-        "id": 50,
-        "question_id": 9,
-        "answer": "Autre",
-        "score": 0,
-        "order": 6,
-        "active": 1,
-        "allows_other": 1,
-        "created_at": "2026-08-30 22:43:21",
-        "updated_at": "2026-08-30 22:43:21"
-    },
-    {
-        "id": 51,
-        "question_id": 10,
-        "answer": "Entourage\/famille",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:45:03",
-        "updated_at": "2026-08-30 22:45:03"
-    },
-    {
-        "id": 52,
-        "question_id": 10,
-        "answer": "Ami(e)s",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:45:03",
-        "updated_at": "2026-08-30 22:45:03"
-    },
-    {
-        "id": 53,
-        "question_id": 10,
-        "answer": "Réseaux sociaux\/internet",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:45:03",
-        "updated_at": "2026-08-30 22:45:03"
-    },
-    {
-        "id": 54,
-        "question_id": 10,
-        "answer": "Professionnel de santé",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:45:03",
-        "updated_at": "2026-08-30 22:45:03"
-    },
-    {
-        "id": 55,
-        "question_id": 10,
-        "answer": "Ancienne utilisation\/prescription",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:45:03",
-        "updated_at": "2026-08-30 22:45:03"
-    },
-    {
-        "id": 56,
-        "question_id": 10,
-        "answer": "Autre",
-        "score": 0,
-        "order": 6,
-        "active": 1,
-        "allows_other": 1,
-        "created_at": "2026-08-30 22:45:03",
-        "updated_at": "2026-08-30 22:45:03"
-    },
-    {
-        "id": 57,
-        "question_id": 11,
-        "answer": "Toujours",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:46:16",
-        "updated_at": "2026-08-30 22:46:16"
-    },
-    {
-        "id": 58,
-        "question_id": 11,
-        "answer": "Souvent",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:46:16",
-        "updated_at": "2026-08-30 22:46:16"
-    },
-    {
-        "id": 59,
-        "question_id": 11,
-        "answer": "Parfois",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:46:16",
-        "updated_at": "2026-08-30 22:46:16"
-    },
-    {
-        "id": 60,
-        "question_id": 11,
-        "answer": "Rarement",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:46:16",
-        "updated_at": "2026-08-30 22:46:16"
-    },
-    {
-        "id": 61,
-        "question_id": 11,
-        "answer": "Jamais",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:46:16",
-        "updated_at": "2026-08-30 22:46:16"
-    },
-    {
-        "id": 65,
-        "question_id": 12,
-        "answer": "Oui",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:50:53",
-        "updated_at": "2026-08-30 22:50:53"
-    },
-    {
-        "id": 66,
-        "question_id": 12,
-        "answer": "Non",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:50:53",
-        "updated_at": "2026-08-30 22:50:53"
-    },
-    {
-        "id": 67,
-        "question_id": 12,
-        "answer": "Ne sait pas",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-30 22:50:53",
-        "updated_at": "2026-08-30 22:50:53"
-    },
-    {
-        "id": 68,
-        "question_id": 13,
-        "answer": "Dispensation sans remarque particuliere",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:36:40",
-        "updated_at": "2026-08-31 12:36:40"
-    },
-    {
-        "id": 69,
-        "question_id": 13,
-        "answer": "Conseils sur le bon usage",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:36:40",
-        "updated_at": "2026-08-31 12:36:40"
-    },
-    {
-        "id": 70,
-        "question_id": 13,
-        "answer": "Information sur les risques et effets indesirables",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:36:40",
-        "updated_at": "2026-08-31 12:36:40"
-    },
-    {
-        "id": 71,
-        "question_id": 13,
-        "answer": "Deconseil de l utilisation",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:36:40",
-        "updated_at": "2026-08-31 12:36:40"
-    },
-    {
-        "id": 72,
-        "question_id": 13,
-        "answer": "Refus de dispensation",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:36:40",
-        "updated_at": "2026-08-31 12:36:40"
-    },
-    {
-        "id": 73,
-        "question_id": 13,
-        "answer": "Orientation vers un medecin",
-        "score": 0,
-        "order": 6,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:36:40",
-        "updated_at": "2026-08-31 12:36:40"
-    },
-    {
-        "id": 74,
-        "question_id": 13,
-        "answer": "Autre",
-        "score": 0,
-        "order": 7,
-        "active": 1,
-        "allows_other": 1,
-        "created_at": "2026-08-31 12:36:40",
-        "updated_at": "2026-08-31 12:36:40"
-    },
-    {
-        "id": 75,
-        "question_id": 14,
-        "answer": "Oui",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:43:16",
-        "updated_at": "2026-08-31 12:43:16"
-    },
-    {
-        "id": 76,
-        "question_id": 14,
-        "answer": "Non",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:43:16",
-        "updated_at": "2026-08-31 12:43:16"
-    },
-    {
-        "id": 83,
-        "question_id": 16,
-        "answer": "Oui",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:46:04",
-        "updated_at": "2026-08-31 12:46:04"
-    },
-    {
-        "id": 84,
-        "question_id": 16,
-        "answer": "Non",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:46:04",
-        "updated_at": "2026-08-31 12:46:04"
-    },
-    {
-        "id": 85,
-        "question_id": 17,
-        "answer": "Oui",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:46:59",
-        "updated_at": "2026-08-31 12:46:59"
-    },
-    {
-        "id": 86,
-        "question_id": 17,
-        "answer": "Non",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:46:59",
-        "updated_at": "2026-08-31 12:46:59"
-    },
-    {
-        "id": 87,
-        "question_id": 18,
-        "answer": "Oui",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:47:41",
-        "updated_at": "2026-08-31 12:47:41"
-    },
-    {
-        "id": 88,
-        "question_id": 18,
-        "answer": "Non",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:47:41",
-        "updated_at": "2026-08-31 12:47:41"
-    },
-    {
-        "id": 89,
-        "question_id": 19,
-        "answer": "Pas du tout",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:58:52",
-        "updated_at": "2026-08-31 12:58:52"
-    },
-    {
-        "id": 90,
-        "question_id": 19,
-        "answer": "Peu",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:58:52",
-        "updated_at": "2026-08-31 12:58:52"
-    },
-    {
-        "id": 91,
-        "question_id": 19,
-        "answer": "Modérément",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:58:52",
-        "updated_at": "2026-08-31 12:58:52"
-    },
-    {
-        "id": 92,
-        "question_id": 19,
-        "answer": "Beaucoup",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:58:52",
-        "updated_at": "2026-08-31 12:58:52"
-    },
-    {
-        "id": 93,
-        "question_id": 19,
-        "answer": "Énormément",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 12:58:52",
-        "updated_at": "2026-08-31 12:58:52"
-    },
-    {
-        "id": 94,
-        "question_id": 20,
-        "answer": "Automedication",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:17:38",
-        "updated_at": "2026-08-31 13:17:38"
-    },
-    {
-        "id": 95,
-        "question_id": 20,
-        "answer": "Facilite d acces au medicament",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:17:38",
-        "updated_at": "2026-08-31 13:17:38"
-    },
-    {
-        "id": 96,
-        "question_id": 20,
-        "answer": "Influence de l entourage",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:17:38",
-        "updated_at": "2026-08-31 13:17:38"
-    },
-    {
-        "id": 97,
-        "question_id": 20,
-        "answer": "Influence des reseaux sociaux",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:17:38",
-        "updated_at": "2026-08-31 13:17:38"
-    },
-    {
-        "id": 98,
-        "question_id": 20,
-        "answer": "Recherche de prise de poids",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:17:38",
-        "updated_at": "2026-08-31 13:17:38"
-    },
-    {
-        "id": 99,
-        "question_id": 20,
-        "answer": "Recherche de modification de la silhouette",
-        "score": 0,
-        "order": 6,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:17:38",
-        "updated_at": "2026-08-31 13:17:38"
-    },
-    {
-        "id": 100,
-        "question_id": 20,
-        "answer": "Publicite marketing",
-        "score": 0,
-        "order": 7,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:17:38",
-        "updated_at": "2026-08-31 13:17:38"
-    },
-    {
-        "id": 101,
-        "question_id": 20,
-        "answer": "Conseil de professionnels de sante",
-        "score": 0,
-        "order": 8,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:17:38",
-        "updated_at": "2026-08-31 13:17:38"
-    },
-    {
-        "id": 102,
-        "question_id": 20,
-        "answer": "Autre",
-        "score": 0,
-        "order": 9,
-        "active": 1,
-        "allows_other": 1,
-        "created_at": "2026-08-31 13:17:38",
-        "updated_at": "2026-08-31 13:17:38"
-    },
-    {
-        "id": 103,
-        "question_id": 21,
-        "answer": "Renforcement de l information des patients",
-        "score": 0,
-        "order": 1,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:18:51",
-        "updated_at": "2026-08-31 13:18:51"
-    },
-    {
-        "id": 104,
-        "question_id": 21,
-        "answer": "Sensibilisation des professionnels de sante",
-        "score": 0,
-        "order": 2,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:18:51",
-        "updated_at": "2026-08-31 13:18:51"
-    },
-    {
-        "id": 105,
-        "question_id": 21,
-        "answer": "Renforcement du controle de la dispensation",
-        "score": 0,
-        "order": 3,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:18:51",
-        "updated_at": "2026-08-31 13:18:51"
-    },
-    {
-        "id": 106,
-        "question_id": 21,
-        "answer": "Surveillance des ventes sur internet et les reseaux sociaux",
-        "score": 0,
-        "order": 4,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:18:51",
-        "updated_at": "2026-08-31 13:18:51"
-    },
-    {
-        "id": 107,
-        "question_id": 21,
-        "answer": "Renforcement de la reglementation",
-        "score": 0,
-        "order": 5,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:18:51",
-        "updated_at": "2026-08-31 13:18:51"
-    },
-    {
-        "id": 108,
-        "question_id": 21,
-        "answer": "Sensibilisation sur les reseaux sociaux",
-        "score": 0,
-        "order": 6,
-        "active": 1,
-        "allows_other": 0,
-        "created_at": "2026-08-31 13:18:51",
-        "updated_at": "2026-08-31 13:18:51"
-    },
-    {
-        "id": 109,
-        "question_id": 21,
-        "answer": "Autre",
-        "score": 0,
-        "order": 7,
-        "active": 1,
-        "allows_other": 1,
-        "created_at": "2026-08-31 13:18:51",
-        "updated_at": "2026-08-31 13:18:51"
-    }
+  {
+    "id": 1,
+    "question_id": 1,
+    "answer": "Pharmacien titulaire",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 2,
+    "question_id": 1,
+    "answer": "Pharmacien assistant",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 3,
+    "question_id": 1,
+    "answer": "Autre",
+    "order": 3,
+    "allows_other": true
+  },
+  {
+    "id": 4,
+    "question_id": 2,
+    "answer": "Dakar",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 5,
+    "question_id": 2,
+    "answer": "Thiès",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 6,
+    "question_id": 2,
+    "answer": "Mbour",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 7,
+    "question_id": 2,
+    "answer": "Autre",
+    "order": 4,
+    "allows_other": true
+  },
+  {
+    "id": 8,
+    "question_id": 3,
+    "answer": "Oui",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 9,
+    "question_id": 3,
+    "answer": "Non",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 10,
+    "question_id": 4,
+    "answer": "Antinorex",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 11,
+    "question_id": 4,
+    "answer": "Pernabol",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 12,
+    "question_id": 4,
+    "answer": "Nurabol",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 13,
+    "question_id": 4,
+    "answer": "Ciptadine",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 14,
+    "question_id": 4,
+    "answer": "Appetine",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 15,
+    "question_id": 4,
+    "answer": "Pervital",
+    "order": 6,
+    "allows_other": false
+  },
+  {
+    "id": 16,
+    "question_id": 4,
+    "answer": "Nuravit",
+    "order": 7,
+    "allows_other": false
+  },
+  {
+    "id": 17,
+    "question_id": 4,
+    "answer": "Stimogene",
+    "order": 8,
+    "allows_other": false
+  },
+  {
+    "id": 18,
+    "question_id": 4,
+    "answer": "Trimetabol",
+    "order": 9,
+    "allows_other": false
+  },
+  {
+    "id": 19,
+    "question_id": 4,
+    "answer": "Tres-Orix",
+    "order": 10,
+    "allows_other": false
+  },
+  {
+    "id": 20,
+    "question_id": 4,
+    "answer": "Dynamogen",
+    "order": 11,
+    "allows_other": false
+  },
+  {
+    "id": 21,
+    "question_id": 4,
+    "answer": "Apetamin",
+    "order": 12,
+    "allows_other": false
+  },
+  {
+    "id": 22,
+    "question_id": 4,
+    "answer": "Desyrel",
+    "order": 13,
+    "allows_other": false
+  },
+  {
+    "id": 23,
+    "question_id": 4,
+    "answer": "Neuheptavit",
+    "order": 14,
+    "allows_other": false
+  },
+  {
+    "id": 24,
+    "question_id": 4,
+    "answer": "Autre",
+    "order": 15,
+    "allows_other": true
+  },
+  {
+    "id": 25,
+    "question_id": 5,
+    "answer": "Très rarement",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 26,
+    "question_id": 5,
+    "answer": "Rarement",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 27,
+    "question_id": 5,
+    "answer": "Occasionnellement",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 28,
+    "question_id": 5,
+    "answer": "Fréquemment",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 29,
+    "question_id": 5,
+    "answer": "Très fréquemment",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 30,
+    "question_id": 6,
+    "answer": "Moins de 25 %",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 31,
+    "question_id": 6,
+    "answer": "25-50 %",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 32,
+    "question_id": 6,
+    "answer": "51-75 %",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 33,
+    "question_id": 6,
+    "answer": "Plus de 75 %",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 34,
+    "question_id": 6,
+    "answer": "Ne sait pas",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 35,
+    "question_id": 7,
+    "answer": "Moins de 18 ans",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 36,
+    "question_id": 7,
+    "answer": "18-25 ans",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 37,
+    "question_id": 7,
+    "answer": "26-35 ans",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 38,
+    "question_id": 7,
+    "answer": "36-45 ans",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 39,
+    "question_id": 7,
+    "answer": "Plus de 45 ans",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 40,
+    "question_id": 7,
+    "answer": "Ne sait pas",
+    "order": 6,
+    "allows_other": false
+  },
+  {
+    "id": 41,
+    "question_id": 8,
+    "answer": "Féminin",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 42,
+    "question_id": 8,
+    "answer": "Masculin",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 43,
+    "question_id": 8,
+    "answer": "Les deux de façon comparable",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 44,
+    "question_id": 8,
+    "answer": "Ne sait pas",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 45,
+    "question_id": 9,
+    "answer": "Manque d'appétit",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 46,
+    "question_id": 9,
+    "answer": "Volonté de prendre du poids",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 47,
+    "question_id": 9,
+    "answer": "Recherche de rondeurs",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 48,
+    "question_id": 9,
+    "answer": "Modification de la silhouette",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 49,
+    "question_id": 9,
+    "answer": "Augmentation du volume des fesses/hanches",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 50,
+    "question_id": 9,
+    "answer": "Autre",
+    "order": 6,
+    "allows_other": true
+  },
+  {
+    "id": 51,
+    "question_id": 10,
+    "answer": "Entourage/famille",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 52,
+    "question_id": 10,
+    "answer": "Ami(e)s",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 53,
+    "question_id": 10,
+    "answer": "Réseaux sociaux/internet",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 54,
+    "question_id": 10,
+    "answer": "Professionnel de santé",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 55,
+    "question_id": 10,
+    "answer": "Ancienne utilisation/prescription",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 56,
+    "question_id": 10,
+    "answer": "Autre",
+    "order": 6,
+    "allows_other": true
+  },
+  {
+    "id": 57,
+    "question_id": 11,
+    "answer": "Toujours",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 58,
+    "question_id": 11,
+    "answer": "Souvent",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 59,
+    "question_id": 11,
+    "answer": "Parfois",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 60,
+    "question_id": 11,
+    "answer": "Rarement",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 61,
+    "question_id": 11,
+    "answer": "Jamais",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 65,
+    "question_id": 12,
+    "answer": "Oui",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 66,
+    "question_id": 12,
+    "answer": "Non",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 67,
+    "question_id": 12,
+    "answer": "Ne sait pas",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 68,
+    "question_id": 13,
+    "answer": "Dispensation sans remarque particulière",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 69,
+    "question_id": 13,
+    "answer": "Conseils sur le bon usage",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 70,
+    "question_id": 13,
+    "answer": "Information sur les risques et effets indésirables",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 71,
+    "question_id": 13,
+    "answer": "Déconseil de l'utilisation",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 72,
+    "question_id": 13,
+    "answer": "Refus de dispensation",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 73,
+    "question_id": 13,
+    "answer": "Orientation vers un médecin",
+    "order": 6,
+    "allows_other": false
+  },
+  {
+    "id": 74,
+    "question_id": 13,
+    "answer": "Autre",
+    "order": 7,
+    "allows_other": true
+  },
+  {
+    "id": 75,
+    "question_id": 14,
+    "answer": "Oui",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 76,
+    "question_id": 14,
+    "answer": "Non",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 83,
+    "question_id": 16,
+    "answer": "Oui",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 84,
+    "question_id": 16,
+    "answer": "Non",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 85,
+    "question_id": 17,
+    "answer": "Oui",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 86,
+    "question_id": 17,
+    "answer": "Non",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 87,
+    "question_id": 18,
+    "answer": "Oui",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 88,
+    "question_id": 18,
+    "answer": "Non",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 89,
+    "question_id": 19,
+    "answer": "Pas du tout",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 90,
+    "question_id": 19,
+    "answer": "Peu",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 91,
+    "question_id": 19,
+    "answer": "Modérément",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 92,
+    "question_id": 19,
+    "answer": "Beaucoup",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 93,
+    "question_id": 19,
+    "answer": "Énormément",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 94,
+    "question_id": 20,
+    "answer": "Automédication",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 95,
+    "question_id": 20,
+    "answer": "Facilité d'accès au médicament",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 96,
+    "question_id": 20,
+    "answer": "Influence de l'entourage",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 97,
+    "question_id": 20,
+    "answer": "Influence des réseaux sociaux",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 98,
+    "question_id": 20,
+    "answer": "Recherche de prise de poids",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 99,
+    "question_id": 20,
+    "answer": "Recherche de modification de la silhouette",
+    "order": 6,
+    "allows_other": false
+  },
+  {
+    "id": 100,
+    "question_id": 20,
+    "answer": "Publicité marketing",
+    "order": 7,
+    "allows_other": false
+  },
+  {
+    "id": 101,
+    "question_id": 20,
+    "answer": "Conseil de professionnels de santé",
+    "order": 8,
+    "allows_other": false
+  },
+  {
+    "id": 102,
+    "question_id": 20,
+    "answer": "Autre",
+    "order": 9,
+    "allows_other": true
+  },
+  {
+    "id": 103,
+    "question_id": 21,
+    "answer": "Renforcement de l'information des patients",
+    "order": 1,
+    "allows_other": false
+  },
+  {
+    "id": 104,
+    "question_id": 21,
+    "answer": "Sensibilisation des professionnels de santé",
+    "order": 2,
+    "allows_other": false
+  },
+  {
+    "id": 105,
+    "question_id": 21,
+    "answer": "Renforcement du contrôle de la dispensation",
+    "order": 3,
+    "allows_other": false
+  },
+  {
+    "id": 106,
+    "question_id": 21,
+    "answer": "Surveillance des ventes sur internet et les réseaux sociaux",
+    "order": 4,
+    "allows_other": false
+  },
+  {
+    "id": 107,
+    "question_id": 21,
+    "answer": "Renforcement de la réglementation",
+    "order": 5,
+    "allows_other": false
+  },
+  {
+    "id": 108,
+    "question_id": 21,
+    "answer": "Sensibilisation sur les réseaux sociaux",
+    "order": 6,
+    "allows_other": false
+  },
+  {
+    "id": 109,
+    "question_id": 21,
+    "answer": "Autre",
+    "order": 7,
+    "allows_other": true
+  }
 ]
