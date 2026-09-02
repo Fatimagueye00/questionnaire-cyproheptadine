@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Answer;
 
 class Question extends Model
 {
     public function answers(): HasMany
     {
-        return $this->hasMany(Answer::class);
+        return $this->hasMany(Answer::class, 'question_id', 'id');
     }
 }
