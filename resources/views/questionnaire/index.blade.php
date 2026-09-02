@@ -26,7 +26,7 @@
             background: white;
             padding: 35px;
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
         .header {
@@ -107,14 +107,26 @@
             font-weight: bold;
             font-size: 17px;
             margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .multiple-info {
+            color: #176b4d;
+            font-size: 13px;
+            font-weight: normal;
+            margin-left: 8px;
         }
 
         .answer {
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
         .answer label {
             cursor: pointer;
+        }
+
+        .answer input {
+            margin-right: 8px;
         }
 
         .other-input {
@@ -124,6 +136,7 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 7px;
+            font-size: 15px;
         }
 
         .buttons {
@@ -167,6 +180,28 @@
             border-radius: 8px;
             font-weight: bold;
         }
+
+        .no-questions {
+            padding: 20px;
+            text-align: center;
+            background: #fff3cd;
+            color: #856404;
+            border-radius: 8px;
+        }
+
+        .sub-question {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8faf9;
+            border-left: 4px solid #176b4d;
+            border-radius: 8px;
+        }
+
+        .sub-question-title {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 
@@ -184,6 +219,7 @@
         </div>
 
         <div class="intro">
+
             <p>
                 Dans le cadre d’une étude portant sur le mésusage de la cyproheptadine
                 à des fins orexigènes, nous réalisons une enquête auprès des pharmaciens
@@ -200,19 +236,18 @@
             <p>
                 Nous vous remercions pour votre participation.
             </p>
+
         </div>
 
     </div>
 
 
-    {{-- Informations visibles dans l'entête --}}
     <div id="participantHeader" class="participant-header">
 
         <strong>Participant :</strong>
 
         <span id="headerNom"></span>
         <span id="headerPrenom"></span>
-
         <span id="headerAge"></span>
         <span id="headerFonction"></span>
 
@@ -220,9 +255,11 @@
 
 
     @if(session('success'))
+
         <div class="success">
             {{ session('success') }}
         </div>
+
     @endif
 
 
@@ -231,33 +268,51 @@
         @csrf
 
 
-        {{-- Informations du participant --}}
+        <!-- INFORMATIONS PARTICIPANT -->
+
         <div class="participant-info">
 
             <h2>Informations du participant</h2>
 
+
             <div class="field">
-                <label for="nom">Nom</label>
+
+                <label for="nom">
+                    Nom
+                </label>
+
                 <input
                     type="text"
                     id="nom"
                     name="nom"
                     required
                 >
+
             </div>
 
+
             <div class="field">
-                <label for="prenom">Prénom</label>
+
+                <label for="prenom">
+                    Prénom
+                </label>
+
                 <input
                     type="text"
                     id="prenom"
                     name="prenom"
                     required
                 >
+
             </div>
 
+
             <div class="field">
-                <label for="age">Âge</label>
+
+                <label for="age">
+                    Âge
+                </label>
+
                 <input
                     type="number"
                     id="age"
@@ -266,102 +321,252 @@
                     max="120"
                     required
                 >
+
             </div>
 
+
             <div class="field">
-                <label for="fonction">Fonction</label>
+
+                <label for="fonction">
+                    Fonction
+                </label>
+
                 <input
                     type="text"
                     id="fonction"
                     name="fonction"
                     required
                 >
+
             </div>
 
         </div>
+</div>
+
+<div style="background: yellow; padding: 20px; color: black; font-size: 20px;">
+    TEST : {{ $questions->first()->question ?? 'AUCUNE QUESTION' }}
+</div>
 
 
-        {{-- Questions --}}
-        @foreach ($questions as $question)
+        <!-- QUESTIONS -->
 
-            <div class="question">
+        @if(isset($questions) && $questions->count() > 0)
 
-                <div class="question-title">
+            @foreach($questions as $question)
 
-                    {{ $question->order }}.
-                    {{ $question->text }}
+                <div class="question">
 
-                    @if($question->multiple)
-                        <small>
-                            (Plusieurs réponses possibles)
-                        </small>
-                    @endif
+                    <div class="question-title">
 
-                </div>
+                        {{ $question->order }}.
+                        {{ $question->question }}
 
+                        @if($question->type === 'multiple_choice')
 
-                @foreach ($question->answers as $answer)
-
-                    <div class="answer">
-
-                        @if($question->multiple)
-
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    name="question_{{ $question->id }}[]"
-                                    value="{{ $answer->id }}"
-                                    onchange="toggleOther(this)"
-                                >
-
-                                {{ $answer->text }}
-                            </label>
-
-                        @else
-
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="question_{{ $question->id }}"
-                                    value="{{ $answer->id }}"
-                                    onchange="toggleOther(this)"
-                                    required
-                                >
-
-                                {{ $answer->text }}
-                            </label>
-
-                        @endif
-
-
-                        @if(strtolower(trim($answer->text)) === 'autre')
-
-                            <input
-                                type="text"
-                                name="other_{{ $question->id }}"
-                                class="other-input"
-                                placeholder="Précisez..."
-                            >
+                            <span class="multiple-info">
+                                (Plusieurs réponses possibles)
+                            </span>
 
                         @endif
 
                     </div>
 
-                @endforeach
+
+                    @if($question->answers && $question->answers->count() > 0)
+
+                        @foreach($question->answers as $answer)
+
+                            <div class="answer">
+
+                                @if($question->type === 'multiple_choice')
+
+                                    <label>
+
+                                        <input
+                                            type="checkbox"
+                                            name="question_{{ $question->id }}[]"
+                                            value="{{ $answer->id }}"
+                                            onchange="toggleOther(this)"
+                                        >
+
+                                        {{ $answer->answer }}
+
+                                    </label>
+
+                                @else
+
+                                    <label>
+
+                                        <input
+                                            type="radio"
+                                            name="question_{{ $question->id }}"
+                                            value="{{ $answer->id }}"
+                                            onchange="toggleOther(this); toggleQuestion14(this)"
+                                            required
+                                            data-question-id="{{ $question->id }}"
+                                        >
+
+                                        {{ $answer->answer }}
+
+                                    </label>
+
+                                @endif
+
+
+                                @if($answer->allows_other)
+
+                                    <input
+                                        type="text"
+                                        name="other_{{ $question->id }}"
+                                        class="other-input"
+                                        placeholder="Précisez..."
+                                    >
+
+                                @endif
+
+                            </div>
+
+                        @endforeach
+
+
+                    @else
+
+                        <p>
+                            Aucune réponse disponible pour cette question.
+                        </p>
+
+                    @endif
+
+
+                    <!-- SOUS-QUESTION 14 -->
+
+                    @if($question->order == 14)
+
+                        <div
+                            id="sous-question-14"
+                            class="sub-question"
+                        >
+
+                            <div class="sub-question-title">
+
+                                Si oui, pour quelle(s) raison(s) ?
+
+                            </div>
+
+
+                            <div class="answer">
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        name="question_14_raisons[]"
+                                        value="prise_de_poids"
+                                    >
+
+                                    Prise de poids
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="answer">
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        name="question_14_raisons[]"
+                                        value="augmentation_appetit"
+                                    >
+
+                                    Augmentation de l’appétit
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="answer">
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        name="question_14_raisons[]"
+                                        value="conseil_entourage"
+                                    >
+
+                                    Conseil de l’entourage
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="answer">
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        name="question_14_raisons[]"
+                                        value="autre"
+                                        onchange="toggleOther(this)"
+                                    >
+
+                                    Autre
+
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="question_14_autre"
+                                    name="question_14_autre"
+                                    class="other-input"
+                                    placeholder="Précisez..."
+                                >
+
+                            </div>
+
+                        </div>
+
+                    @endif
+
+                </div>
+
+            @endforeach
+
+
+        @else
+
+            <div class="no-questions">
+
+                Aucune question disponible pour le moment.
 
             </div>
 
-        @endforeach
+        @endif
 
 
-        {{-- UN SEUL bouton Envoyer --}}
+        <!-- BOUTONS -->
+
         <div class="buttons">
 
-            <button type="submit" class="btn btn-submit">
+            <button
+                type="submit"
+                class="btn btn-submit"
+            >
                 Envoyer
             </button>
 
-            <button type="reset" class="btn btn-reset">
+
+            <button
+                type="reset"
+                class="btn btn-reset"
+            >
                 Effacer le formulaire
             </button>
 
@@ -374,18 +579,26 @@
 
 <script>
 
-    /*
-     * Affichage automatique des informations
-     * du participant dans l'entête.
-     */
+    /* ================================
+       INFORMATIONS PARTICIPANT
+    ================================= */
 
-    const nomInput = document.getElementById('nom');
-    const prenomInput = document.getElementById('prenom');
-    const ageInput = document.getElementById('age');
-    const fonctionInput = document.getElementById('fonction');
+    const nomInput =
+        document.getElementById('nom');
+
+    const prenomInput =
+        document.getElementById('prenom');
+
+    const ageInput =
+        document.getElementById('age');
+
+    const fonctionInput =
+        document.getElementById('fonction');
+
 
     const participantHeader =
         document.getElementById('participantHeader');
+
 
     const headerNom =
         document.getElementById('headerNom');
@@ -403,18 +616,28 @@
     function updateParticipantHeader() {
 
         headerNom.textContent =
-            nomInput.value ? nomInput.value + ' ' : '';
+            nomInput.value
+                ? nomInput.value + ' '
+                : '';
+
 
         headerPrenom.textContent =
-            prenomInput.value ? prenomInput.value + ' ' : '';
+            prenomInput.value
+                ? prenomInput.value + ' '
+                : '';
+
 
         headerAge.textContent =
-            ageInput.value ? '(' + ageInput.value + ' ans) ' : '';
+            ageInput.value
+                ? '(' + ageInput.value + ' ans) '
+                : '';
+
 
         headerFonction.textContent =
             fonctionInput.value
                 ? '- ' + fonctionInput.value
                 : '';
+
 
         participantHeader.style.display =
             (
@@ -423,8 +646,9 @@
                 ageInput.value ||
                 fonctionInput.value
             )
-            ? 'block'
-            : 'none';
+                ? 'block'
+                : 'none';
+
     }
 
 
@@ -433,15 +657,18 @@
         updateParticipantHeader
     );
 
+
     prenomInput.addEventListener(
         'input',
         updateParticipantHeader
     );
 
+
     ageInput.addEventListener(
         'input',
         updateParticipantHeader
     );
+
 
     fonctionInput.addEventListener(
         'input',
@@ -449,31 +676,130 @@
     );
 
 
-    /*
-     * Afficher le champ "Autre"
-     * uniquement lorsqu'il est sélectionné.
-     */
+    /* ================================
+       CHAMP AUTRE
+    ================================= */
 
     function toggleOther(element) {
 
         const parent =
             element.closest('.answer');
 
+
+        if (!parent) {
+            return;
+        }
+
+
         const otherInput =
             parent.querySelector('.other-input');
+
 
         if (!otherInput) {
             return;
         }
 
-        otherInput.style.display =
-            element.checked
-                ? 'block'
-                : 'none';
+
+        if (element.checked) {
+
+            otherInput.style.display =
+                'block';
+
+        } else {
+
+            otherInput.style.display =
+                'none';
+
+            otherInput.value =
+                '';
+
+        }
+
+    }
+
+
+    /* ================================
+       SOUS-QUESTION 14
+    ================================= */
+
+    function toggleQuestion14(input) {
+
+        const sousQuestion =
+            document.getElementById('sous-question-14');
+
+
+        if (!sousQuestion) {
+            return;
+        }
+
+
+        const question14Id =
+            "{{ $questions->firstWhere('order', 14)->id ?? '' }}";
+
+
+        if (
+            String(input.dataset.questionId)
+            !==
+            String(question14Id)
+        ) {
+            return;
+        }
+
+
+        const labelText =
+            input.parentElement.textContent
+                .trim()
+                .toLowerCase();
+
+
+        if (
+            input.checked &&
+            labelText.includes('oui')
+        ) {
+
+            sousQuestion.style.display =
+                'block';
+
+        } else {
+
+            sousQuestion.style.display =
+                'none';
+
+
+            sousQuestion
+                .querySelectorAll(
+                    'input[type="checkbox"]'
+                )
+                .forEach(function(checkbox) {
+
+                    checkbox.checked =
+                        false;
+
+                });
+
+
+            const autre =
+                document.getElementById(
+                    'question_14_autre'
+                );
+
+
+            if (autre) {
+
+                autre.style.display =
+                    'none';
+
+                autre.value =
+                    '';
+
+            }
+
+        }
 
     }
 
 </script>
 
 </body>
+
 </html>
