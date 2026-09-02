@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,6 +190,7 @@
     </div>
 
     <div class="intro">
+
         <p>
             Dans le cadre d’une étude portant sur le mésusage de la cyproheptadine
             à des fins orexigènes, nous réalisons une enquête auprès des pharmaciens
@@ -205,27 +207,40 @@
         <p>
             Nous vous remercions pour votre participation.
         </p>
+
     </div>
 
+
     @if(session('success'))
+
         <div class="success">
             {{ session('success') }}
         </div>
+
     @endif
 
+
     @if($errors->any())
+
         <div class="error">
+
             <strong>Veuillez corriger les erreurs suivantes :</strong>
+
             <ul>
                 @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
+
         </div>
+
     @endif
 
+
     <form method="POST" action="{{ route('questionnaire.submit') }}">
+
         @csrf
+
 
         @if(isset($questions) && $questions->count() > 0)
 
@@ -234,15 +249,20 @@
                 <div class="question">
 
                     <div class="question-title">
+
                         {{ $question->order }}.
                         {{ $question->question }}
 
                         @if($question->type === 'multiple_choice')
+
                             <span class="multiple-info">
                                 (Plusieurs réponses possibles)
                             </span>
+
                         @endif
+
                     </div>
+
 
                     @if($question->answers && $question->answers->count() > 0)
 
@@ -253,6 +273,7 @@
                                 @if($question->type === 'multiple_choice')
 
                                     <label>
+
                                         <input
                                             type="checkbox"
                                             name="question_{{ $question->id }}[]"
@@ -260,12 +281,16 @@
                                             onchange="toggleOther(this)"
                                         >
 
-                                        <span>{{ $answer->answer }}</span>
+                                        <span>
+                                            {{ $answer->answer }}
+                                        </span>
+
                                     </label>
 
                                 @else
 
                                     <label>
+
                                         <input
                                             type="radio"
                                             name="question_{{ $question->id }}"
@@ -275,10 +300,14 @@
                                             data-question-id="{{ $question->id }}"
                                         >
 
-                                        <span>{{ $answer->answer }}</span>
+                                        <span>
+                                            {{ $answer->answer }}
+                                        </span>
+
                                     </label>
 
                                 @endif
+
 
                                 @if($answer->allows_other)
 
@@ -297,52 +326,75 @@
 
                     @else
 
-                        <p>Aucune réponse disponible pour cette question.</p>
+                        <p>
+                            Aucune réponse disponible pour cette question.
+                        </p>
 
                     @endif
 
 
                     {{-- Sous-question de la question 14 --}}
+
                     @if($question->order == 14)
 
-                        <div id="sous-question-14" class="sub-question">
+                        <div
+                            id="sous-question-14"
+                            class="sub-question"
+                        >
 
                             <div class="sub-question-title">
                                 Si oui, pour quelle(s) raison(s) ?
                             </div>
 
+
                             <label>
+
                                 <input
                                     type="checkbox"
                                     name="question_14_raisons[]"
                                     value="augmentation_appetit"
                                 >
+
                                 Augmentation de l’appétit
+
                             </label>
+
                             <br>
 
+
                             <label>
+
                                 <input
                                     type="checkbox"
                                     name="question_14_raisons[]"
                                     value="prise_de_poids"
                                 >
+
                                 Recherche de prise de poids
+
                             </label>
+
                             <br>
 
+
                             <label>
+
                                 <input
                                     type="checkbox"
                                     name="question_14_raisons[]"
                                     value="autre"
+                                    onchange="toggleSousQuestionAutre(this)"
                                 >
+
                                 Autre
+
                             </label>
+
 
                             <input
                                 type="text"
                                 name="question_14_autre"
+                                id="question_14_autre"
                                 class="other-input"
                                 placeholder="Précisez..."
                             >
@@ -366,11 +418,19 @@
 
         <div class="buttons">
 
-            <button type="submit" class="submit-btn">
+            <button
+                type="submit"
+                class="submit-btn"
+            >
                 Envoyer
             </button>
 
-            <button type="reset" class="reset-btn">
+
+            <button
+                type="button"
+                class="reset-btn"
+                onclick="effacerFormulaire()"
+            >
                 Effacer le formulaire
             </button>
 
@@ -383,6 +443,12 @@
 
 <script>
 
+    /*
+    |--------------------------------------------------------------------------
+    | Afficher / cacher le champ "Autre"
+    |--------------------------------------------------------------------------
+    */
+
     function toggleOther(element) {
 
         const answerContainer = element.closest('.answer');
@@ -391,28 +457,42 @@
             return;
         }
 
-        const otherInput = answerContainer.querySelector('.other-input');
+        const otherInput =
+            answerContainer.querySelector('.other-input');
 
         if (!otherInput) {
             return;
         }
 
         if (element.checked) {
+
             otherInput.style.display = 'block';
+
         } else {
+
             otherInput.style.display = 'none';
             otherInput.value = '';
+
         }
     }
 
 
+    /*
+    |--------------------------------------------------------------------------
+    | Question 14
+    |--------------------------------------------------------------------------
+    */
+
     function toggleQuestion14(element) {
 
-        const questionId = element.dataset.questionId;
+        const questionId =
+            element.dataset.questionId;
 
-        const questionNumber = "{{ $questions->firstWhere('order', 14)->id ?? '' }}";
+        const questionNumber =
+            "{{ $questions->firstWhere('order', 14)->id ?? '' }}";
 
-        const sousQuestion = document.getElementById('sous-question-14');
+        const sousQuestion =
+            document.getElementById('sous-question-14');
 
         if (!sousQuestion) {
             return;
@@ -422,65 +502,111 @@
             return;
         }
 
-        const label = element.closest('label');
+        const label =
+            element.closest('label');
 
         if (!label) {
             return;
         }
 
-        const texte = label.innerText.toLowerCase();
+        const texte =
+            label.innerText.toLowerCase();
 
         if (texte.includes('oui')) {
+
             sousQuestion.style.display = 'block';
+
         } else {
+
             sousQuestion.style.display = 'none';
 
-            sousQuestion.querySelectorAll('input[type="checkbox"]')
-                .forEach(input => input.checked = false);
+            sousQuestion
+                .querySelectorAll('input[type="checkbox"]')
+                .forEach(function(input) {
 
-            sousQuestion.querySelectorAll('input[type="text"]')
-                .forEach(input => {
+                    input.checked = false;
+
+                });
+
+            sousQuestion
+                .querySelectorAll('input[type="text"]')
+                .forEach(function(input) {
+
                     input.value = '';
                     input.style.display = 'none';
+
                 });
+
         }
     }
 
 
-    document.addEventListener('change', function(event) {
+    /*
+    |--------------------------------------------------------------------------
+    | "Autre" de la sous-question 14
+    |--------------------------------------------------------------------------
+    */
 
-        if (
-            event.target.matches(
-                'input[name="question_14_raisons[]"]'
-            )
-        ) {
+    function toggleSousQuestionAutre(element) {
 
-            const autreInput =
-                document.querySelector(
-                    'input[name="question_14_autre"]'
-                );
+        const autreInput =
+            document.getElementById('question_14_autre');
 
-            if (!autreInput) {
-                return;
-            }
-
-            if (
-                event.target.value === 'autre' &&
-                event.target.checked
-            ) {
-                autreInput.style.display = 'block';
-            }
-
-            if (
-                event.target.value === 'autre' &&
-                !event.target.checked
-            ) {
-                autreInput.style.display = 'none';
-                autreInput.value = '';
-            }
+        if (!autreInput) {
+            return;
         }
 
-    });
+        if (element.checked) {
+
+            autreInput.style.display = 'block';
+
+        } else {
+
+            autreInput.style.display = 'none';
+            autreInput.value = '';
+
+        }
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Effacer complètement le formulaire
+    |--------------------------------------------------------------------------
+    */
+
+    function effacerFormulaire() {
+
+        const formulaire =
+            document.querySelector('form');
+
+        if (!formulaire) {
+            return;
+        }
+
+        formulaire.reset();
+
+
+        document
+            .querySelectorAll('.other-input')
+            .forEach(function(input) {
+
+                input.value = '';
+                input.style.display = 'none';
+
+            });
+
+
+        const sousQuestion =
+            document.getElementById('sous-question-14');
+
+        if (sousQuestion) {
+
+            sousQuestion.style.display = 'none';
+
+        }
+
+    }
 
 </script>
 
