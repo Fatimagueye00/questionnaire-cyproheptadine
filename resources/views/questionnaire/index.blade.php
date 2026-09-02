@@ -266,7 +266,7 @@
 
                     @if($question->answers && $question->answers->count() > 0)
 
-                        @foreach($question->answers as $answer)
+                      @foreach($question->answers->unique('answer') as $answer)
 
                             <div class="answer">
 
