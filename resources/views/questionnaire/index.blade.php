@@ -52,49 +52,6 @@
             color: #555;
         }
 
-        .participant-header {
-            display: none;
-            margin: 20px 0;
-            padding: 15px;
-            background: #eef8f3;
-            border-left: 5px solid #176b4d;
-            border-radius: 8px;
-        }
-
-        .participant-header strong {
-            color: #176b4d;
-        }
-
-        .participant-info {
-            margin: 30px 0;
-            padding: 25px;
-            background: #f8faf9;
-            border-radius: 12px;
-        }
-
-        .participant-info h2 {
-            color: #176b4d;
-            margin-top: 0;
-        }
-
-        .field {
-            margin-bottom: 18px;
-        }
-
-        .field label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: bold;
-        }
-
-        .field input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 7px;
-            font-size: 15px;
-        }
-
         .question {
             margin: 25px 0;
             padding: 22px;
@@ -209,6 +166,8 @@
 
 <div class="container">
 
+    <!-- EN-TÊTE -->
+
     <div class="header">
 
         <h1>QUESTIONNAIRE DE PRÉ-TEST</h1>
@@ -242,17 +201,7 @@
     </div>
 
 
-    <div id="participantHeader" class="participant-header">
-
-        <strong>Participant :</strong>
-
-        <span id="headerNom"></span>
-        <span id="headerPrenom"></span>
-        <span id="headerAge"></span>
-        <span id="headerFonction"></span>
-
-    </div>
-
+    <!-- MESSAGE DE SUCCÈS -->
 
     @if(session('success'))
 
@@ -263,89 +212,11 @@
     @endif
 
 
+    <!-- FORMULAIRE -->
+
     <form method="POST" action="{{ route('questionnaire.submit') }}">
 
         @csrf
-
-
-        <!-- INFORMATIONS PARTICIPANT -->
-
-        <div class="participant-info">
-
-            <h2>Informations du participant</h2>
-
-
-            <div class="field">
-
-                <label for="nom">
-                    Nom
-                </label>
-
-                <input
-                    type="text"
-                    id="nom"
-                    name="nom"
-                    required
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label for="prenom">
-                    Prénom
-                </label>
-
-                <input
-                    type="text"
-                    id="prenom"
-                    name="prenom"
-                    required
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label for="age">
-                    Âge
-                </label>
-
-                <input
-                    type="number"
-                    id="age"
-                    name="age"
-                    min="1"
-                    max="120"
-                    required
-                >
-
-            </div>
-
-
-            <div class="field">
-
-                <label for="fonction">
-                    Fonction
-                </label>
-
-                <input
-                    type="text"
-                    id="fonction"
-                    name="fonction"
-                    required
-                >
-
-            </div>
-
-        </div>
-</div>
-
-<div style="background: yellow; padding: 20px; color: black; font-size: 20px;">
-    TEST : {{ $questions->first()->question ?? 'AUCUNE QUESTION' }}
-</div>
 
 
         <!-- QUESTIONS -->
@@ -580,103 +451,6 @@
 <script>
 
     /* ================================
-       INFORMATIONS PARTICIPANT
-    ================================= */
-
-    const nomInput =
-        document.getElementById('nom');
-
-    const prenomInput =
-        document.getElementById('prenom');
-
-    const ageInput =
-        document.getElementById('age');
-
-    const fonctionInput =
-        document.getElementById('fonction');
-
-
-    const participantHeader =
-        document.getElementById('participantHeader');
-
-
-    const headerNom =
-        document.getElementById('headerNom');
-
-    const headerPrenom =
-        document.getElementById('headerPrenom');
-
-    const headerAge =
-        document.getElementById('headerAge');
-
-    const headerFonction =
-        document.getElementById('headerFonction');
-
-
-    function updateParticipantHeader() {
-
-        headerNom.textContent =
-            nomInput.value
-                ? nomInput.value + ' '
-                : '';
-
-
-        headerPrenom.textContent =
-            prenomInput.value
-                ? prenomInput.value + ' '
-                : '';
-
-
-        headerAge.textContent =
-            ageInput.value
-                ? '(' + ageInput.value + ' ans) '
-                : '';
-
-
-        headerFonction.textContent =
-            fonctionInput.value
-                ? '- ' + fonctionInput.value
-                : '';
-
-
-        participantHeader.style.display =
-            (
-                nomInput.value ||
-                prenomInput.value ||
-                ageInput.value ||
-                fonctionInput.value
-            )
-                ? 'block'
-                : 'none';
-
-    }
-
-
-    nomInput.addEventListener(
-        'input',
-        updateParticipantHeader
-    );
-
-
-    prenomInput.addEventListener(
-        'input',
-        updateParticipantHeader
-    );
-
-
-    ageInput.addEventListener(
-        'input',
-        updateParticipantHeader
-    );
-
-
-    fonctionInput.addEventListener(
-        'input',
-        updateParticipantHeader
-    );
-
-
-    /* ================================
        CHAMP AUTRE
     ================================= */
 
@@ -685,20 +459,16 @@
         const parent =
             element.closest('.answer');
 
-
         if (!parent) {
             return;
         }
 
-
         const otherInput =
             parent.querySelector('.other-input');
-
 
         if (!otherInput) {
             return;
         }
-
 
         if (element.checked) {
 
@@ -726,7 +496,6 @@
 
         const sousQuestion =
             document.getElementById('sous-question-14');
-
 
         if (!sousQuestion) {
             return;
