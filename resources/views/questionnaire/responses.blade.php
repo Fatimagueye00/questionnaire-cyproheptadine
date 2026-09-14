@@ -10,7 +10,7 @@
         }
         body {
             margin: 0;
-            padding: 30px;
+            padding: 30px 15px;
             font-family: Arial, sans-serif;
             background: #f5f7fa;
             color: #222;
@@ -26,16 +26,15 @@
         .response {
             background: white;
             padding: 25px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
         }
-        .response-header {
-            font-weight: bold;
-            font-size: 18px;
+        .date {
+            text-align: right;
+            color: #777;
+            font-size: 14px;
             margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #ddd;
         }
         .question {
             margin-bottom: 18px;
@@ -77,24 +76,38 @@
     @if($responses->count() > 0)
         @foreach($responses as $response)
             <div class="response">
-                <div class="response-header">
-                    Réponse n°{{ $loop->iteration }}
-                    <br>
-                    <small>
-                        Envoyée le {{ $response->created_at->format('d/m/Y à H:i') }}
-                    </small>
+                <div class="date">
+                    Envoyée le
+                    {{ $response->created_at->format('d/m/Y à H:i') }}
                 </div>
                 @php
                     $reponses = is_array($response->reponses)
                         ? $response->reponses
                         : json_decode($response->reponses, true);
+                    $questions = \App\Models\Question::where('active', true)
+                        ->orderBy('order', 'asc')
+                        ->get()
+                        ->keyBy('id');
                 @endphp
                 @if(is_array($reponses))
                     @foreach($reponses as $key => $value)
                         @if($key !== '_token')
+                            @php
+                                $questionId = str_replace(
+                                    ['question_', '[]'],
+                                    '',
+                                    $key
+                                );
+                                $question = $questions->get($questionId);
+                            @endphp
                             <div class="question">
                                 <div class="question-title">
-                                    {{ $key }}
+                                    @if($question)
+                                        {{ $question->order }}.
+                                        {{ $question->question }}
+                                    @else
+                                        {{ $key }}
+                                    @endif
                                 </div>
                                 <div class="answer">
                                     @if(is_array($value))
@@ -112,7 +125,10 @@
     @else
         <div class="empty">
             <h2>Aucune réponse enregistrée</h2>
-            <p>Les réponses apparaîtront ici lorsqu'une personne aura rempli le questionnaire.</p>
+            <p>
+                Les réponses apparaîtront ici lorsqu'une personne
+                aura rempli le questionnaire.
+            </p>
         </div>
     @endif
 </div>
