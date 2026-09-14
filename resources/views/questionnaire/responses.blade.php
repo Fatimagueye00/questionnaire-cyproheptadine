@@ -35,6 +35,8 @@
             color: #777;
             font-size: 14px;
             margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
         }
         .question {
             margin-bottom: 18px;
@@ -44,7 +46,7 @@
         }
         .question-title {
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .answer {
             color: #333;
@@ -84,39 +86,99 @@
                     $reponses = is_array($response->reponses)
                         ? $response->reponses
                         : json_decode($response->reponses, true);
-                    $questions = \App\Models\Question::where('active', true)
-                        ->orderBy('order', 'asc')
-                        ->get()
-                        ->keyBy('id');
                 @endphp
                 @if(is_array($reponses))
                     @foreach($reponses as $key => $value)
                         @if($key !== '_token')
                             @php
-                                $questionId = str_replace(
-                                    ['question_', '[]'],
-                                    '',
-                                    $key
-                                );
-                                $question = $questions->get($questionId);
+                                $question = null;
+                                if (str_starts_with($key, 'question_')) {
+                                    $questionId = (int) str_replace(
+                                        'question_',
+                                        '',
+                                        $key
+                                    );
+                                    $question = $questions->get($questionId);
+                                }
                             @endphp
-                            <div class="question">
-                                <div class="question-title">
-                                    @if($question)
+                            @if($question)
+                                <div class="question">
+                                    <div class="question-title">
                                         {{ $question->order }}.
                                         {{ $question->question }}
-                                    @else
-                                        {{ $key }}
-                                    @endif
+                                    </div>
+                                    <div class="answer">
+                                        @if(is_array($value))
+                                            @foreach($value as $answerId)
+                                                @php
+                                                    $answer = $answers->get($answerId);
+                                                @endphp
+                                                @if($answer)
+                                                    {{ $answer->answer }}
+                                                @else
+                                                    {{ $answerId }}
+                                                @endif
+                                                @if(!$loop->last)
+                                                    ,
+                                                @endif
+                                            @endforeach
+                                        @else
+                                            @php
+                                                $answer = $answers->get($value);
+                                            @endphp
+                                            @if($answer)
+                                                {{ $answer->answer }}
+                                            @else
+                                                {{ $value }}
+                                            @endif
+                                        @endif
+                                    </div>
                                 </div>
-                                <div class="answer">
-                                    @if(is_array($value))
-                                        {{ implode(', ', $value) }}
-                                    @else
-                                        {{ $value }}
-                                    @endif
-                                </div>
-                            </div>
+                            @elseif(str_starts_with($key, 'other_'))
+                                @if(!empty($value))
+                                    <div class="question">
+                                        <div class="question-title">
+                                            Précision « Autre »
+                                        </div>
+                                        <div class="answer">
+                                            {{ $value }}
+                                        </div>
+                                    </div>
+                                @endif
+                            @elseif(
+                                $key === 'question_14_raisons' ||
+                                $key === 'question_14_autre'
+                            )
+                                @if(!empty($value))
+                                    <div class="question">
+                                        <div class="question-title">
+                                            Précision concernant la question 14
+                                        </div>
+                                        <div class="answer">
+                                            @if(is_array($value))
+                                                {{ implode(', ', $value) }}
+                                            @else
+                                                {{ $value }}
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endif
+                            @else
+                                @if(!empty($value))
+                                    <div class="question">
+                                        <div class="question-title">
+                                            {{ $key }}
+                                        </div>
+                                        <div class="answer">
+                                            @if(is_array($value))
+                                                {{ implode(', ', $value) }}
+                                            @else
+                                                {{ $value }}
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endif
+                            @endif
                         @endif
                     @endforeach
                 @endif

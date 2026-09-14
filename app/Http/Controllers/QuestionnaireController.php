@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Question;
+use App\Models\Answer;
 use App\Models\QuestionnaireResponse;
 use Illuminate\Http\Request;
 class QuestionnaireController extends Controller
@@ -41,6 +42,15 @@ class QuestionnaireController extends Controller
     public function responses()
     {
         $responses = QuestionnaireResponse::latest()->get();
-        return view('questionnaire.responses', compact('responses'));
+        $answers = Answer::all()->keyBy('id');
+        $questions = Question::where('active', true)
+            ->orderBy('order', 'asc')
+            ->get()
+            ->keyBy('id');
+        return view('questionnaire.responses', compact(
+            'responses',
+            'answers',
+            'questions'
+        ));
     }
 }
