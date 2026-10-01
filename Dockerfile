@@ -1,4 +1,5 @@
 FROM php:8.2-apache
+
 # Installer les dépendances système nécessaires
 RUN apt-get update && apt-get install -y \
     git \
@@ -21,29 +22,55 @@ RUN apt-get update && apt-get install -y \
     zip \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
+
 # Dossier de travail
 WORKDIR /var/www/html
+
 # Copier le projet
 COPY . .
+
 # Configuration Apache pour Laravel
 RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' \
     /etc/apache2/sites-available/000-default.conf
+
 # Installer Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
     && rm composer-setup.php
+
 # Installer les dépendances Laravel
 RUN composer install --no-dev --optimize-autoloader
+
+# Créer les dossiers nécessaires à Laravel
+RUN mkdir -p \
+    /var/www/html/storage/framework/cache \
+    /var/www/html/storage/framework/sessions \
+    /var/www/html/storage/framework/views \
+    /var/www/html/storage/logs \
+    /var/www/html/bootstrap/cache
+
+# Supprimer l'ancien fichier de log s'il existe
+RUN rm -f /var/www/html/storage/logs/laravel.log
+
+# Corriger les permissions Laravel
+RUN chown -R www-data:www-data \
+    /var/www/html/storage \
+    /var/www/html/bootstrap/cache \
+    && chmod -R 775 \
+    /var/www/html/storage \
+    /var/www/html/bootstrap/cache
+
 # Nettoyer le cache de configuration Laravel
 RUN php artisan config:clear
-# Permissions
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+
 # Copier le script de démarrage
 COPY start.sh /usr/local/bin/start.sh
+
 # Donner les permissions d'exécution au script
 RUN chmod +x /usr/local/bin/start.sh
+
 # Port utilisé par Render
 EXPOSE 80
+
 # Lancer les migrations puis Apache
 CMD ["/usr/local/bin/start.sh"]
