@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Questionnaire de pré-test</title>
+    <title>  QUESTIONNAIRE D’ENQUÊTE AUPRÈS DES PHARMACIENS D’OFFICINE
+    SUR LE MÉSUSAGE DE LA CYPROHEPTADINE À DES FINS OREXIGÈNES</title>
 
     <style>
         * {
@@ -182,21 +183,22 @@
 
 <div class="container">
 
-    <h1>QUESTIONNAIRE DE PRÉ-TEST</h1>
+    <h1>  QUESTIONNAIRE D’ENQUÊTE AUPRÈS DES PHARMACIENS D’OFFICINE
+    SUR LE MÉSUSAGE DE LA CYPROHEPTADINE À DES FINS OREXIGÈNES</h1>
 
     <div class="subtitle">
-        Pré-test du questionnaire d’enquête sur le mésusage de la cyproheptadine
-        à des fins orexigènes auprès des pharmaciens d’officine
+          QUESTIONNAIRE D’ENQUÊTE AUPRÈS DES PHARMACIENS D’OFFICINE
+    SUR LE MÉSUSAGE DE LA CYPROHEPTADINE À DES FINS OREXIGÈNES
     </div>
 
     <div class="intro">
 
         <p>
-            Dans le cadre d’une étude portant sur le mésusage de la cyproheptadine
-            à des fins orexigènes, nous réalisons une enquête auprès des pharmaciens
-            d’officine afin d’évaluer les caractéristiques des demandes, le profil
-            des consommateurs ainsi que les pratiques et le niveau de vigilance
-            des professionnels face à ce phénomène.
+            Dans le cadre de notre thèse portant sur le mésusage de la cyproheptadine
+        à des fins orexigènes, nous réalisons une enquête auprès des pharmaciens
+        d’officine afin d’évaluer les caractéristiques des demandes, le profil
+        des consommateurs ainsi que les pratiques et le niveau de vigilance
+        des professionnels face à ce phénomène.
         </p>
 
         <p>
