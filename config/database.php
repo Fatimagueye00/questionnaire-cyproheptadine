@@ -85,7 +85,7 @@ return [
             // IMPORTANT :
             // On désactive DATABASE_URL pour que Laravel
             // utilise directement les variables DB_*.
-            'url' => null,
+            'url' => env('DATABASE_URL'),
 
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
